@@ -1,0 +1,13 @@
+
+
+import com.test.Emp
+import com.test.EmpCompletion
+import com.test.Functions
+
+rule "Approve Good Credit"
+  when 
+    a: Emp(age > 20)
+  then
+    a.setAp(true);
+    Functions.insertEmpResponse(kcontext, a); 
+end 
